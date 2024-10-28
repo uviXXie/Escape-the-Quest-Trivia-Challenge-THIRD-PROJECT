@@ -6,7 +6,12 @@ from personajes import Gallina
 
 pygame.init()
 
-player = Gallina(50, 50)
+
+player_image = pygame.image.load("interfaz_grafica/assets/images/characters/gallina/chicken_right_stand.png")
+player_image = pygame.transform.scale(player_image,(player_image.get_width()*constantes.SCALA_CHARACTER,
+                                    player_image.get_height()*constantes.SCALA_CHARACTER))
+
+player = Gallina(50, 50,player_image)
 
 window = pygame.display.set_mode((constantes.WIDHT_SCREEN, constantes.HEIGHT_SCREEN))
 pygame.display.set_caption("Escape the Quest: Trivia Challenge")
@@ -31,13 +36,13 @@ while run:
     delta_y = 0
     
     if move_right:
-        delta_x += 5
+        delta_x = 5
     if move_left:
-        delta_x -= 5
+        delta_x = -5
     if move_up:
-        delta_y -= 5
+        delta_y = -5
     if move_down:
-        delta_y += 5
+        delta_y = 5
 
     player.draw_chicken(window)
     
