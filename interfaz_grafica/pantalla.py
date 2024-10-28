@@ -48,7 +48,7 @@ while run:
     delta_x = 0 
     delta_y = 0
     
-    if move_right:
+    if move_right :
         delta_x = 5
     if move_left:
         delta_x = -5
@@ -57,7 +57,7 @@ while run:
     if move_down:
         delta_y = 5
 
-    player.uptade()
+    player.update()
 
     player.draw_chicken(window)
     
