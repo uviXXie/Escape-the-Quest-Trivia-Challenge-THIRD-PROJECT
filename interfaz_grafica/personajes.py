@@ -4,7 +4,7 @@ import constantes
 class Gallina:
     """The Gallina class represents the first character: a chicken :)"""
 
-    def __init__(self, x, y, image) -> None:
+    def __init__(self, x, y, animations) -> None:
         """Constructor for the Gallina class.
 
         Args:
@@ -15,8 +15,24 @@ class Gallina:
 
         self.shape = pygame.Rect(0, 0, constantes.GALLINA_HEIGHT, constantes.GALLINA_WIDTH)
         self.shape.center = (x, y)
-        self.image = image
+        self.frame_index = 0
+        self.update_time = pygame.time.get_ticks() #se almacena el tiempo en milisegundos
+        self.image = animations[self.frame_index]
+        self.animations = animations
         self.flip = False
+
+
+    def uptade(self):
+        animation_cooldown = 100
+        self.image = self.animations[self.frame_index]
+        if pygame.time.get_ticks() - self.update_time >= animation_cooldown:
+            self.frame_index = self.frame_index + 1
+            self.update_time = pygame.time.get_ticks()
+            if self.frame_index >= len(self.animations):
+                self.frame_index = 0 
+            else:
+                pass
+
 
     def draw_chicken(self, screen):
         """Draws the chicken on the screen.
