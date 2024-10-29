@@ -7,6 +7,8 @@ pygame.init()
 
 
 
+
+
 def scale_img(image,scale):
     w = image.get_width()
     h = image.get_height()
@@ -25,7 +27,8 @@ player = Gallina(50, 50,animations)
 window = pygame.display.set_mode((constantes.WIDHT_SCREEN, constantes.HEIGHT_SCREEN))
 pygame.display.set_caption("Escape the Quest: Trivia Challenge")
 
-
+icon = pygame.image.load("interfaz_grafica\chicken.png")
+pygame.display.set_icon(icon)
 
 
 

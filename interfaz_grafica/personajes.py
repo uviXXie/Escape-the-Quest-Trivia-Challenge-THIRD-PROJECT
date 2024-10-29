@@ -36,6 +36,7 @@ class Gallina:
         Args:
             screen (pygame.Surface): Surface on which to draw the chicken.
         """
+        pygame.draw.rect(screen,constantes.GALLINA_COLOR,self.shape,1)
         imagen_flip = pygame.transform.flip(self.image, self.flip, False)
         screen.blit(imagen_flip, self.shape)
 
