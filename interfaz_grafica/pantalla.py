@@ -2,7 +2,6 @@ import pygame
 import constantes
 from personajes import Gallina
 
-#TOMAR PERSONAJES DE ITCH.IO
 
 pygame.init()
 
@@ -29,7 +28,7 @@ pygame.display.set_caption("Escape the Quest: Trivia Challenge")
 
 
 
-# Definir variables del movimiento
+
 move_up = False
 move_down = False
 move_right = False
@@ -40,11 +39,11 @@ clock = pygame.time.Clock()
 run = True 
 
 while run:
-    # Establece 60fps
+
     clock.tick(constantes.FPS)
     window.fill(constantes.BG_COLOR)
     
-    # Calcular movimiento del jugador
+   
     delta_x = 0 
     delta_y = 0
     
