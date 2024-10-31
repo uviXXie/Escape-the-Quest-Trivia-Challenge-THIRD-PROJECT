@@ -2,9 +2,10 @@ import pygame
 import constantes
 from personajes import Gallina
 
-#TOMAR PERSONAJES DE ITCH.IO
 
 pygame.init()
+
+
 
 
 
@@ -26,10 +27,11 @@ player = Gallina(50, 50,animations)
 window = pygame.display.set_mode((constantes.WIDHT_SCREEN, constantes.HEIGHT_SCREEN))
 pygame.display.set_caption("Escape the Quest: Trivia Challenge")
 
+icon = pygame.image.load("interfaz_grafica\chicken.png")
+pygame.display.set_icon(icon)
 
 
 
-# Definir variables del movimiento
 move_up = False
 move_down = False
 move_right = False
@@ -40,11 +42,11 @@ clock = pygame.time.Clock()
 run = True 
 
 while run:
-    # Establece 60fps
+
     clock.tick(constantes.FPS)
     window.fill(constantes.BG_COLOR)
     
-    # Calcular movimiento del jugador
+   
     delta_x = 0 
     delta_y = 0
     
@@ -77,6 +79,18 @@ while run:
             if events.key == pygame.K_s:
                 move_down = True
                 print("Down")
+            if events.key == pygame.K_LEFT:
+                move_left = True
+                print('left')
+            if events.key == pygame.K_RIGHT:
+                move_right = True
+                print('Right')
+            if events.key == pygame.K_UP:
+                move_up = True
+                print('Up')
+            if events.key == pygame.K_DOWN:
+                move_down = True
+                print('Down')
         if events.type == pygame.KEYUP:
             if events.key == pygame.K_a:
                 move_left = False
@@ -86,6 +100,16 @@ while run:
                 move_up = False
             if events.key == pygame.K_s:
                 move_down = False
+            if events.key == pygame.K_LEFT:
+                move_left = False
+            if events.key == pygame.K_RIGHT:
+                move_right = False
+            if events.key == pygame.K_UP:
+                move_up = False
+            if events.key == pygame.K_DOWN:
+                move_down = False
+               
+            
 
     player.movement(delta_x, delta_y)
     pygame.display.update()
