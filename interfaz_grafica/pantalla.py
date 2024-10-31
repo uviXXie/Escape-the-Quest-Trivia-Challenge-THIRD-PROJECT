@@ -79,6 +79,18 @@ while run:
             if events.key == pygame.K_s:
                 move_down = True
                 print("Down")
+            if events.key == pygame.K_LEFT:
+                move_left = True
+                print('left')
+            if events.key == pygame.K_RIGHT:
+                move_right = True
+                print('Right')
+            if events.key == pygame.K_UP:
+                move_up = True
+                print('Up')
+            if events.key == pygame.K_DOWN:
+                move_down = True
+                print('Down')
         if events.type == pygame.KEYUP:
             if events.key == pygame.K_a:
                 move_left = False
@@ -88,6 +100,16 @@ while run:
                 move_up = False
             if events.key == pygame.K_s:
                 move_down = False
+            if events.key == pygame.K_LEFT:
+                move_left = False
+            if events.key == pygame.K_RIGHT:
+                move_right = False
+            if events.key == pygame.K_UP:
+                move_up = False
+            if events.key == pygame.K_DOWN:
+                move_down = False
+               
+            
 
     player.movement(delta_x, delta_y)
     pygame.display.update()
