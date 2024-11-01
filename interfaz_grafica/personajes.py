@@ -48,11 +48,10 @@ class Gallina:
             delta_y (int): Movement in the y-axis.
         """
         if delta_x < 0:
-            self.flip = True
+                self.flip = True
         elif delta_x > 0:
-            self.flip = False
+                self.flip = False
 
-      
         new_x = self.shape.x + delta_x
         new_y = self.shape.y + delta_y
 
@@ -62,3 +61,6 @@ class Gallina:
 
         if 0 <= new_y <= constantes.HEIGHT_SCREEN - self.shape.height:
             self.shape.y = new_y
+    
+                
+                

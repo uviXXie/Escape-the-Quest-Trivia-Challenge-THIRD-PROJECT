@@ -1,5 +1,10 @@
-class Obstaculo:
+import time
+import threading
+from personajes import Gallina
 
-    def __init__(self,x,y,animation) -> None:
-       self.shape = 0
-       self.shape.center = (x, y)
+class obstaculos(Gallina):
+    
+    def __init__(self, x, y, animations) -> None:
+        super().__init__(x, y, animations)
+        
+

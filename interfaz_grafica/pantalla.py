@@ -1,6 +1,7 @@
 import pygame
 import constantes
 from personajes import Gallina
+from obstaculos import obstaculos
 
 pygame.init()
 pygame.mixer.init()
@@ -35,6 +36,8 @@ for i in range(4):
 
 
 player = Gallina(50, 50, animations)
+tronco_image = pygame.image.load("interfaz_grafica/assets/images/obstacles/tronco.png")
+tronco_obstacle = obstaculos(0,200,tronco_image)
 
 window = pygame.display.set_mode((constantes.WIDHT_SCREEN, constantes.HEIGHT_SCREEN))
 pygame.display.set_caption("Escape the Quest: Trivia Challenge")
@@ -49,6 +52,8 @@ clock = pygame.time.Clock()
 run = True
 
 while run:
+
+    
 
     clock.tick(constantes.FPS)
     window.fill(constantes.BG_COLOR)
