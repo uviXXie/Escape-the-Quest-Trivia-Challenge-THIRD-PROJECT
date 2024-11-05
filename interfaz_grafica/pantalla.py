@@ -85,7 +85,7 @@ run = True
 while run:
 
     clock.tick(constantes.FPS)
-    window.fill(constantes.BG_COLOR)
+    window.fill(constantes.BLACK_COLOR)
 
 
     delta_x, delta_y = 0, 0
